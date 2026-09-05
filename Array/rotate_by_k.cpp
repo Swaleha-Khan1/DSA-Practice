@@ -3,7 +3,6 @@
 #include<algorithm>
 using namespace std;
 
-
 // Brute
 // void rotate(int arr[], int n, int k){
 //     k = k%n;
@@ -40,9 +39,9 @@ using namespace std;
 // Optimal
 void rotate(int arr[], int n, int k){
     k = k%n;
+    reverse(arr,arr+n);
     reverse(arr,arr+k);
     reverse(arr+k,arr+n);
-    reverse(arr,arr+n);
 }
 
 int main(){
