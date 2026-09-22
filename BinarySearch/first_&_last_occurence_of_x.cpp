@@ -22,3 +22,78 @@ int main() {
 
     return 0;
 }
+
+// Using simple binary search
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// int firstOccurrence(vector<int>& arr, int n, int k)
+// {
+//     int low = 0, high = n - 1;
+//     int first = -1;
+
+//     while (low <= high)
+//     {
+//         int mid = (low + high) / 2;
+
+//         if (arr[mid] == k)
+//         {
+//             first = mid;
+//             high = mid - 1;
+//         }
+//         else if (arr[mid] < k)
+//         {
+//             low = mid + 1;
+//         }
+//         else
+//         {
+//             high = mid - 1;
+//         }
+//     }
+
+//     return first;
+// }
+
+// int lastOccurrence(vector<int>& arr, int n, int k)
+// {
+//     int low = 0, high = n - 1;
+//     int last = -1;
+
+//     while (low <= high)
+//     {
+//         int mid = (low + high) / 2;
+
+//         if (arr[mid] == k)
+//         {
+//             last = mid;
+//             low = mid + 1;
+//         }
+//         else if (arr[mid] < k)
+//         {
+//             low = mid + 1;
+//         }
+//         else
+//         {
+//             high = mid - 1;
+//         }
+//     }
+
+//     return last;
+// }
+
+// int main()
+// {
+//     vector<int> arr = {1, 2, 2, 2, 3, 4, 5};
+    
+//     int n = arr.size();
+//     int k = 2;
+
+//     int first = firstOccurrence(arr, n, k);
+//     int last = lastOccurrence(arr, n, k);
+
+//     cout << "First occurrence: " << first << endl;
+//     cout << "Last occurrence: " << last << endl;
+
+//     return 0;
+// }
