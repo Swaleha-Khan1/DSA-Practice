@@ -29,7 +29,7 @@ int main(){
 
 // Optimal
 // int maxArea(vector<int>& height) {
-//    int ans = 0;
+//     int ans = 0;
 //     int n = height.size();
 //     int lp = 0;
 //     int rp = n-1;
