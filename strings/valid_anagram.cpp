@@ -46,7 +46,7 @@ bool isAnagram(string s, string t){
 }
 int main(){
     string s = "anagram";
-    string t = "nagaram";
+    string t = "nram";
 
     cout<<(isAnagram(s,t) ? "true" : "false");  //isAnagram(s,t) will return 1 and 0
     return 0;
