@@ -11,32 +11,39 @@ struct ListNode {
     }
 };
 
-ListNode* removeNthFromEnd(ListNode* head, int n) {
-    ListNode* dummy = new ListNode(0);
-    dummy->next = head;
+ListNode* removeKthNode(ListNode* head, int k)
+{
+    // Step 1: Initialize two pointers
+    ListNode* fast = head;
+    ListNode* slow = head;
 
-    ListNode* slow = dummy;
-    ListNode* fast = dummy;
-
-    // Move fast n+1 steps ahead
-    for (int i = 0; i <= n; i++) {
+    // Step 2: Move fast k steps ahead
+    for (int i = 0; i < k; i++)
+    {
         fast = fast->next;
     }
 
-    // Move both pointers until fast reaches NULL
-    while (fast != NULL) {
+    // Step 3: If fast becomes NULL, delete head
+    if (fast == NULL)
+        return head->next;
+
+    // Step 4: Move both pointers until fast reaches last node
+    while (fast->next != NULL)
+    {
+        fast = fast->next;
         slow = slow->next;
-        fast = fast->next;
     }
 
-    // Delete the nth node from the end
-    ListNode* temp = slow->next;
+    // Step 5: Store the node to be deleted
+    ListNode* delNode = slow->next;
+
+    // Step 6: Change links to skip the node
     slow->next = slow->next->next;
-    delete temp;
 
-    head = dummy->next;
-    delete dummy;
+    // Step 7: Free the deleted node
+    free(delNode);
 
+    // Step 8: Return updated head
     return head;
 }
 
@@ -49,7 +56,7 @@ int main() {
 
     int n = 2;
 
-    head = removeNthFromEnd(head, n);
+    head = removeKthNode(head, n);
 
     ListNode* temp = head;
     while (temp != NULL) {
