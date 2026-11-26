@@ -32,9 +32,11 @@ void printTree(TreeNode* root) {
     if (root == NULL)
         return;
 
+    //Add root to the queue
     queue<TreeNode*> q;
     q.push(root);
 
+    //add front elemnent to the queue and pop it out then add its left and right child
     while (!q.empty()) {
         TreeNode* curr = q.front();
         q.pop();
